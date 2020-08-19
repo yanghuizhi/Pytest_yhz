@@ -2,6 +2,12 @@
 # -*- coding: utf-8 -*-
 # Author: yhz
 # Time: 2020/7/31 21:56
+#
+#五、跳过测试和预计失败
+#pytest 除了支持 unittest 和 nosetest 的跳过测试和预计失败的方式外，还在 pytest.mark 中提供对应方法：
+#通过 skip[12] 装饰器或 pytest.skip[13] 函数直接跳过测试
+#通过 skipif[14]按条件跳过测试
+#通过 xfail[15] 预计测试失败
 
 # pytest 可以在类的方法上添加装饰器@pytest.makr.skip,加上装饰器的用例不会执行
 # 3）对于预期失败的用例，可以加上@pytest.mark.xfail

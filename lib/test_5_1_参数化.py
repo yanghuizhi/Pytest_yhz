@@ -14,3 +14,20 @@ def test_eval(test_input, expected):
 
 if __name__ == "__main__":
     pytest.main(["-s", "test_canshu1.py"])
+
+
+"""
+def add(a,b):
+    return a+b
+
+addList1=[
+    (1,2,3),
+    (2,2,4),
+    ('hi',' wuya','hi wuya')
+]
+
+@pytest.mark.parametrize('a,b,result',addList1)
+def test_add(a,b,result):
+    assert  add(a,b)==result
+
+"""

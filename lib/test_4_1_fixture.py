@@ -5,6 +5,7 @@
 
 import pytest
 
+# 固定装置 & 测试夹具
 # 不带参数时默认scope="function"
 # @pytest.fixture()
 # def login():
@@ -33,13 +34,11 @@ if __name__ == "__main__":
 
 Fixture里面有个scope参数，可以控制fixture的范围：session>module>class>function
 
-Function:每一个函数活方法都会被调用
-
-Class：每一个类调用一次，一个类可以有多个方法
-
-Module：每个.py文件调用一次，该文件内有多个function和class
-
-Session：是多个文件调用一次，可以跨.py文件调用，每个.py文件就是module
+Function（函数级）: 每一个函数活方法都会被调用
+Class（类级）：     每一个类调用一次，一个类可以有多个方法
+Module（模块级）：  每个.py文件调用一次，该文件内有多个function和class
+Session（会话级）： 是多个文件调用一次，可以跨.py文件调用，每个.py文件就是module
+package（包级）：   包级，载入每个包前，均会重新生成 fixture
 
 params：可选多个参数调用fixture
 autouse：如果是True，则为所有测试激活fixture，如果是false，则需要显示激活
