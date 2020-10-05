@@ -16,10 +16,7 @@ pytest是python的一种单元测试框架，与python自带的unittest测试框
 
 # pytest插件
 
-1）pytest-sugar：显示色彩和进度条
-
-2）pytest –xdist：多线程并行与分布式执行
-
-3）pytest –ordering：调整测试用例的执行顺序
-
-4）pytest –assume：多重校验，即使前一个校验失败，后面还是会继续
+- pytest-sugar：显示色彩和进度条
+- pytest –xdist：多线程并行与分布式执行
+- pytest –ordering：调整测试用例的执行顺序
+- pytest –assume：多重校验，即使前一个校验失败，后面还是会继续
