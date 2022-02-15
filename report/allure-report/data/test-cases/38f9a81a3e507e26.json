@@ -1,0 +1,66 @@
+{
+  "uid" : "38f9a81a3e507e26",
+  "name" : "test_2[6 * 9-421]",
+  "fullName" : "base.Basics_B.test_6_mark_parametrize#test_2",
+  "historyId" : "453a1862b4712dd6e23f99f2d96e6aef",
+  "time" : {
+    "start" : 1644905145440,
+    "stop" : 1644905145440,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nAssertionError: assert 54 == 42\n  +54\n  -42",
+  "statusTrace" : "test_input = '6 * 9', expected = 42\n\n>   ???\nE   assert 54 == 42\nE     +54\nE     -42\n\nD:\\PythonFiles\\yanghuizhi_pytest\\Basics\\Basics_B\\test_6_mark_parametrize.py:38: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail"
+  }, {
+    "name" : "parentSuite",
+    "value" : "base.Basics_B"
+  }, {
+    "name" : "suite",
+    "value" : "test_6_mark_parametrize"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "7364-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.Basics_B.test_6_mark_parametrize"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "expected",
+    "value" : "42"
+  }, {
+    "name" : "test_input",
+    "value" : "'6 * 9'"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.xfail" ]
+  },
+  "source" : "38f9a81a3e507e26.json",
+  "parameterValues" : [ "42", "'6 * 9'" ]
+}

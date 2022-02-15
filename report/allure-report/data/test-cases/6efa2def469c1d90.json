@@ -1,0 +1,99 @@
+{
+  "uid" : "6efa2def469c1d90",
+  "name" : "test_01[login0]",
+  "fullName" : "base.Basics_B.test_5_mark_xfail_fail.Test_xx#test_01",
+  "historyId" : "3ca4e3ba339f92e279fc49b6a4ae8e7b",
+  "time" : {
+    "start" : 1644905048043,
+    "stop" : 1644905048044,
+    "duration" : 1
+  },
+  "description" : "用例1登录",
+  "descriptionHtml" : "<p>用例1登录</p>\n",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert False == True\n  +False\n  -True",
+  "statusTrace" : "self = <base.Basics_B.test_5_mark_xfail_fail.Test_xx object at 0x0000024A958864F0>, login = False\n\n>   ???\nE   assert False == True\nE     +False\nE     -True\n\nD:\\PythonFiles\\yanghuizhi_pytest\\Basics\\Basics_B\\test_5_mark_xfail_fail.py:53: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "login",
+    "time" : {
+      "start" : 1644905048042,
+      "stop" : 1644905048043,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "用例1登录",
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert False == True\n  +False\n  -True",
+    "statusTrace" : "self = <base.Basics_B.test_5_mark_xfail_fail.Test_xx object at 0x0000024A958864F0>, login = False\n\n>   ???\nE   assert False == True\nE     +False\nE     -True\n\nD:\\PythonFiles\\yanghuizhi_pytest\\Basics\\Basics_B\\test_5_mark_xfail_fail.py:53: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f7df71f98f7c1abe",
+      "name" : "stdout",
+      "source" : "f7df71f98f7c1abe.txt",
+      "type" : "text/plain",
+      "size" : 76
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "base.Basics_B"
+  }, {
+    "name" : "suite",
+    "value" : "test_5_mark_xfail_fail"
+  }, {
+    "name" : "subSuite",
+    "value" : "Test_xx"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "25192-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.Basics_B.test_5_mark_xfail_fail"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "login",
+    "value" : "{'user': 'amdin', 'psw': ''}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6efa2def469c1d90.json",
+  "parameterValues" : [ "{'user': 'amdin', 'psw': ''}" ]
+}

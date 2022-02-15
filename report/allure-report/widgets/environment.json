@@ -1,0 +1,13 @@
+[ {
+  "values" : [ "3.9.0" ],
+  "name" : "Python"
+}, {
+  "values" : [ "Windows-10-10.0.19041-SP0" ],
+  "name" : "Platform"
+}, {
+  "values" : [ "2.17.2" ],
+  "name" : "allure"
+}, {
+  "values" : [ "huizhi.yang" ],
+  "name" : "auther"
+} ]

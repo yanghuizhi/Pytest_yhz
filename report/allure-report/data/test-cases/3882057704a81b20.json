@@ -1,0 +1,59 @@
+{
+  "uid" : "3882057704a81b20",
+  "name" : "test_yoyo2",
+  "fullName" : "base.Basics_D.test_2_xfail_strict#test_yoyo2",
+  "historyId" : "a7976f2d4de5661142f7a624b6957177",
+  "time" : {
+    "start" : 1644904995776,
+    "stop" : 1644904995777,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "statusMessage" : "XPASS",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail"
+  }, {
+    "name" : "parentSuite",
+    "value" : "base.Basics_D"
+  }, {
+    "name" : "suite",
+    "value" : "test_2_xfail_strict"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "25192-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.Basics_D.test_2_xfail_strict"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.xfail" ]
+  },
+  "source" : "3882057704a81b20.json",
+  "parameterValues" : [ ]
+}

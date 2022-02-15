@@ -1,0 +1,71 @@
+{
+  "uid" : "5c6894e16abd8ff4",
+  "name" : "test_hello",
+  "fullName" : "base.Basics_D.test_2_xfail_strict#test_hello",
+  "historyId" : "6c8c0a9e1fdf9766932011d806f73417",
+  "time" : {
+    "start" : 1644905048283,
+    "stop" : 1644905048283,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "39f9c29140768e0c",
+      "name" : "stdout",
+      "source" : "39f9c29140768e0c.txt",
+      "type" : "text/plain",
+      "size" : 13
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "base.Basics_D"
+  }, {
+    "name" : "suite",
+    "value" : "test_2_xfail_strict"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "25192-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.Basics_D.test_2_xfail_strict"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5c6894e16abd8ff4.json",
+  "parameterValues" : [ ]
+}

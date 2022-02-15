@@ -1,0 +1,7 @@
+
+-----开始执行moule----
+module      : base.Basics_B.test_1_fixture_autouse
+----------启动浏览器---------
+function：test_a 
+--------回到首页--------
+-------用例a执行-------

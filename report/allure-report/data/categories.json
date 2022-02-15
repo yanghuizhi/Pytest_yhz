@@ -1,0 +1,76 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "NameError",
+      "children" : [ {
+        "name" : "test_2",
+        "uid" : "cb6ecdfa1405caaf",
+        "parentUid" : "d15adc72015c0b15b703c7d8cd098ce8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1644905218166,
+          "stop" : 1644905218166,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 3,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d15adc72015c0b15b703c7d8cd098ce8"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert False == True\n  +False\n  -True",
+      "children" : [ {
+        "name" : "test_01[login0]",
+        "uid" : "70bd1a399795e53d",
+        "parentUid" : "f19633ec40fb27aad0491849b52455ff",
+        "status" : "failed",
+        "time" : {
+          "start" : 1644905218474,
+          "stop" : 1644905218475,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 3,
+        "retriesStatusChange" : false,
+        "parameters" : [ "{'user': 'amdin', 'psw': ''}" ]
+      } ],
+      "uid" : "f19633ec40fb27aad0491849b52455ff"
+    }, {
+      "name" : "AssertionError: assert 54 == 42\n  +54\n  -42",
+      "children" : [ {
+        "name" : "test_2[6 * 9-420]",
+        "uid" : "2f46439ea6c147fd",
+        "parentUid" : "8d63e9f69d025d79d26a9bb01dd556ed",
+        "status" : "failed",
+        "time" : {
+          "start" : 1644905218660,
+          "stop" : 1644905218661,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 3,
+        "retriesStatusChange" : false,
+        "parameters" : [ "42", "'6 * 9'" ]
+      } ],
+      "uid" : "8d63e9f69d025d79d26a9bb01dd556ed"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

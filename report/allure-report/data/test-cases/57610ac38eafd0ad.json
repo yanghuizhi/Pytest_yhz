@@ -1,0 +1,163 @@
+{
+  "uid" : "57610ac38eafd0ad",
+  "name" : "test_03[login0]",
+  "fullName" : "base.Basics_B.test_5_mark_xfail_fail.Test_xx#test_03",
+  "historyId" : "5c625522623f8463bda0a773919c9eb9",
+  "time" : {
+    "start" : 1644905218502,
+    "stop" : 1644905218502,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL reason: 登录不成功, 标记为xfail\n\n_pytest.outcomes.XFailed: 登录不成功, 标记为xfail",
+  "statusTrace" : "self = <base.Basics_B.test_5_mark_xfail_fail.Test_xx object at 0x0000029C41CCF6A0>, login = False\n\n>   ???\nE   _pytest.outcomes.XFailed: 登录不成功, 标记为xfail\n\nD:\\PythonFiles\\yanghuizhi_pytest\\Basics\\Basics_B\\test_5_mark_xfail_fail.py:67: XFailed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 3,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "login",
+    "time" : {
+      "start" : 1644905218474,
+      "stop" : 1644905218474,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusMessage" : "XFAIL reason: 登录不成功, 标记为xfail\n\n_pytest.outcomes.XFailed: 登录不成功, 标记为xfail",
+    "statusTrace" : "self = <base.Basics_B.test_5_mark_xfail_fail.Test_xx object at 0x0000029C41CCF6A0>, login = False\n\n>   ???\nE   _pytest.outcomes.XFailed: 登录不成功, 标记为xfail\n\nD:\\PythonFiles\\yanghuizhi_pytest\\Basics\\Basics_B\\test_5_mark_xfail_fail.py:67: XFailed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a32623ec63fee1ff",
+      "name" : "stdout",
+      "source" : "a32623ec63fee1ff.txt",
+      "type" : "text/plain",
+      "size" : 29
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "base.Basics_B"
+  }, {
+    "name" : "suite",
+    "value" : "test_5_mark_xfail_fail"
+  }, {
+    "name" : "subSuite",
+    "value" : "Test_xx"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "25308-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.Basics_B.test_5_mark_xfail_fail"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "login",
+    "value" : "{'user': 'amdin', 'psw': ''}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "302d4fc051aa87da",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL reason: 登录不成功, 标记为xfail\n\n_pytest.outcomes.XFailed: 登录不成功, 标记为xfail",
+      "time" : {
+        "start" : 1644905145286,
+        "stop" : 1644905145286,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "9c16f664c2f2d48d",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL reason: 登录不成功, 标记为xfail\n\n_pytest.outcomes.XFailed: 登录不成功, 标记为xfail",
+      "time" : {
+        "start" : 1644905048069,
+        "stop" : 1644905048069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "6f928459685773e5",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL reason: 登录不成功, 标记为xfail\n\n_pytest.outcomes.XFailed: 登录不成功, 标记为xfail",
+      "time" : {
+        "start" : 1644904995543,
+        "stop" : 1644904995543,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 4,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "81add259f634931d",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL reason: 登录不成功, 标记为xfail\n\n_pytest.outcomes.XFailed: 登录不成功, 标记为xfail",
+        "time" : {
+          "start" : 1644905048069,
+          "stop" : 1644905048069,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "99a0e61366ce098e",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL reason: 登录不成功, 标记为xfail\n\n_pytest.outcomes.XFailed: 登录不成功, 标记为xfail",
+        "time" : {
+          "start" : 1644905048069,
+          "stop" : 1644905048069,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "946adda31a67dfad",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL reason: 登录不成功, 标记为xfail\n\n_pytest.outcomes.XFailed: 登录不成功, 标记为xfail",
+        "time" : {
+          "start" : 1644904995543,
+          "stop" : 1644904995543,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "57610ac38eafd0ad.json",
+  "parameterValues" : [ "{'user': 'amdin', 'psw': ''}" ]
+}

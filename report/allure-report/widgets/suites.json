@@ -1,0 +1,37 @@
+{
+  "total" : 3,
+  "items" : [ {
+    "uid" : "2c6df3984da949fd1a2f2fe1fbdbae5b",
+    "name" : "base.Basics_B",
+    "statistic" : {
+      "failed" : 2,
+      "broken" : 1,
+      "skipped" : 4,
+      "passed" : 28,
+      "unknown" : 0,
+      "total" : 35
+    }
+  }, {
+    "uid" : "3a04100253e8dd2d0d05799cbbc7f3ef",
+    "name" : "base.Basics_D",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 7,
+      "unknown" : 0,
+      "total" : 8
+    }
+  }, {
+    "uid" : "8a1ba81a6bd357a0c07ee1d0b8ebcc59",
+    "name" : "base._配置测试",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 3,
+      "unknown" : 0,
+      "total" : 3
+    }
+  } ]
+}

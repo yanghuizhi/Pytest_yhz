@@ -1,0 +1,77 @@
+{
+  "uid" : "43d9b6a49a04974f",
+  "name" : "test_02",
+  "fullName" : "base.Basics_D.test_1_mark标记.TestClass#test_02",
+  "historyId" : "d43dc115f96d728c91ee869da27fe216",
+  "time" : {
+    "start" : 1644904995740,
+    "stop" : 1644904995741,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "705fecc785e78285",
+      "name" : "stdout",
+      "source" : "705fecc785e78285.txt",
+      "type" : "text/plain",
+      "size" : 13
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "hello"
+  }, {
+    "name" : "parentSuite",
+    "value" : "base.Basics_D"
+  }, {
+    "name" : "suite",
+    "value" : "test_1_mark标记"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestClass"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "25192-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.Basics_D.test_1_mark标记"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "hello" ]
+  },
+  "source" : "43d9b6a49a04974f.json",
+  "parameterValues" : [ ]
+}
