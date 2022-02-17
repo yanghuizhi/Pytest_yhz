@@ -14,11 +14,6 @@ class Test_Class(object):
     def test_2(self):
         return "yanghuizhi"
 
-    def test_3(self):
-        a = "hello"
-        b = "hello world"
-        assert a in b
-
 
 if __name__ == '__main__':
     # The default read pytest.ini
