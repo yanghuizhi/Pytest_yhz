@@ -1,0 +1,74 @@
+{
+  "uid" : "c690fd47e6b4e7db",
+  "name" : "test_1",
+  "fullName" : "base.1.allure学习.test_allure_1#test_1",
+  "historyId" : "954d4d970a103502beafd60d253b01d0",
+  "time" : {
+    "start" : 1645068526857,
+    "stop" : 1645068526857,
+    "duration" : 0
+  },
+  "description" : "描述动态更新：失败时展示这里的内容",
+  "descriptionHtml" : "<p>描述动态更新：失败时展示这里的内容</p>\n",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 1 == 2\n  +1\n  -2",
+  "statusTrace" : "@allure.description(\"描述动态更新：失败时展示这里的内容\")\n    def test_1():\n>       assert 1 == int(1 * 2)\nE       assert 1 == 2\nE         +1\nE         -2\n\nallure学习\\test_allure_1.py:11: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 1,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "base.1.allure学习"
+  }, {
+    "name" : "suite",
+    "value" : "test_allure_1"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "23944-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.1.allure学习.test_allure_1"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "53ccb70db06b2e73",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert 1 == 2\n +  where 2 = int((1 * 2))",
+      "time" : {
+        "start" : 1645068324165,
+        "stop" : 1645068324165,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "c690fd47e6b4e7db.json",
+  "parameterValues" : [ ]
+}

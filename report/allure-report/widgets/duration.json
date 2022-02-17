@@ -1,0 +1,101 @@
+[ {
+  "uid" : "f680246d9f3c3863",
+  "name" : "test_login_succ[zhangsan-123321]",
+  "time" : {
+    "start" : 1645068527126,
+    "stop" : 1645068527135,
+    "duration" : 9
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "448b77f8d48befcb",
+  "name" : "test_1",
+  "time" : {
+    "start" : 1645068527191,
+    "stop" : 1645068527193,
+    "duration" : 2
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "a5d627799daf053a",
+  "name" : "标题动态更新：成功时展示这里的内容",
+  "time" : {
+    "start" : 1645068527120,
+    "stop" : 1645068527120,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "486013ca551da505",
+  "name" : "test_2",
+  "time" : {
+    "start" : 1645068527211,
+    "stop" : 1645068527211,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "684990bf8fd6e3a0",
+  "name" : "test_add_employee",
+  "time" : {
+    "start" : 1645068527174,
+    "stop" : 1645068527180,
+    "duration" : 6
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "c23069f5608c1509",
+  "name" : "标题动态更新：失败时展示这里的内容",
+  "time" : {
+    "start" : 1645068527110,
+    "stop" : 1645068527110,
+    "duration" : 0
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "57b4c7575fc86ebc",
+  "name" : "test_login_succ[lisi-32322]",
+  "time" : {
+    "start" : 1645068527152,
+    "stop" : 1645068527162,
+    "duration" : 10
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c690fd47e6b4e7db",
+  "name" : "test_1",
+  "time" : {
+    "start" : 1645068526857,
+    "stop" : 1645068526857,
+    "duration" : 0
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "b75ffc6202b6af70",
+  "name" : "test_3",
+  "time" : {
+    "start" : 1645068527222,
+    "stop" : 1645068527222,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8477b0077abb4f5d",
+  "name" : "test_2",
+  "time" : {
+    "start" : 1645068527105,
+    "stop" : 1645068527105,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

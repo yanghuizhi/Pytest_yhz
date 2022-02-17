@@ -1,0 +1,115 @@
+{
+  "uid" : "57b4c7575fc86ebc",
+  "name" : "test_login_succ[lisi-32322]",
+  "fullName" : "base.1.allure学习.test_allure_2（失败）.TestLogin#test_login_succ",
+  "historyId" : "34abcd3b6c13d388e57185943b88037c",
+  "time" : {
+    "start" : 1645068527152,
+    "stop" : 1645068527162,
+    "duration" : 10
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "执行登录成功",
+      "time" : {
+        "start" : 1645068527152,
+        "stop" : 1645068527162,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e9b4c7dc6860545c",
+        "name" : "请求URL",
+        "source" : "e9b4c7dc6860545c.attach",
+        "type" : "text/plain",
+        "size" : 26
+      }, {
+        "uid" : "3fee985a74d67c19",
+        "name" : "请求数据",
+        "source" : "3fee985a74d67c19.txt",
+        "type" : "text/plain",
+        "size" : 41
+      }, {
+        "uid" : "9d76a871fd58e792",
+        "name" : "图片",
+        "source" : "9d76a871fd58e792.png",
+        "type" : "image/png",
+        "size" : 7
+      } ],
+      "parameters" : [ {
+        "name" : "username",
+        "value" : "'lisi'"
+      }, {
+        "name" : "pwd",
+        "value" : "'32322'"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 1,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "base.1.allure学习"
+  }, {
+    "name" : "suite",
+    "value" : "test_allure_2（失败）"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLogin"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "23944-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.1.allure学习.test_allure_2（失败）"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "pwd",
+    "value" : "'32322'"
+  }, {
+    "name" : "username",
+    "value" : "'lisi'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "57b4c7575fc86ebc.json",
+  "parameterValues" : [ "'32322'", "'lisi'" ]
+}

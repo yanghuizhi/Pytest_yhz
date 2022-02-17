@@ -1,0 +1,86 @@
+{
+  "uid" : "de1b0ff68af18655",
+  "name" : "test_2",
+  "fullName" : "base.1.配置学习.test_configure#test_2",
+  "historyId" : "9e4d4eaa86e382e57d7f1d58895b4f9f",
+  "time" : {
+    "start" : 1645068324410,
+    "stop" : 1645068324411,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "conf",
+    "time" : {
+      "start" : 1645068324410,
+      "stop" : 1645068324410,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "505620afdaff3c8a",
+      "name" : "stdout",
+      "source" : "505620afdaff3c8a.txt",
+      "type" : "text/plain",
+      "size" : 30
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "base.1.配置学习"
+  }, {
+    "name" : "suite",
+    "value" : "test_configure"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "1276-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.1.配置学习.test_configure"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "de1b0ff68af18655.json",
+  "parameterValues" : [ ]
+}

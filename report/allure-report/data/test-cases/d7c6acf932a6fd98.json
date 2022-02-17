@@ -1,0 +1,75 @@
+{
+  "uid" : "d7c6acf932a6fd98",
+  "name" : "test_1",
+  "fullName" : "base.1.配置学习.test_configure#test_1",
+  "historyId" : "1f7732b2d32203b53e0019b7daf68155",
+  "time" : {
+    "start" : 1645068324393,
+    "stop" : 1645068324395,
+    "duration" : 2
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 'hello' == 'helloo'\n  - helloo\n  ?      -\n  + hello",
+  "statusTrace" : "def test_1():\n        print(\"test_1\")\n        a = \"hello\"\n        b = \"helloo\"\n>       assert a == b\nE       AssertionError: assert 'hello' == 'helloo'\nE         - helloo\nE         ?      -\nE         + hello\n\n配置学习\\test_configure.py:13: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert 'hello' == 'helloo'\n  - helloo\n  ?      -\n  + hello",
+    "statusTrace" : "def test_1():\n        print(\"test_1\")\n        a = \"hello\"\n        b = \"helloo\"\n>       assert a == b\nE       AssertionError: assert 'hello' == 'helloo'\nE         - helloo\nE         ?      -\nE         + hello\n\n配置学习\\test_configure.py:13: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "35e3aa397d88cfe2",
+      "name" : "stdout",
+      "source" : "35e3aa397d88cfe2.txt",
+      "type" : "text/plain",
+      "size" : 7
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "base.1.配置学习"
+  }, {
+    "name" : "suite",
+    "value" : "test_configure"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "1276-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.1.配置学习.test_configure"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d7c6acf932a6fd98.json",
+  "parameterValues" : [ ]
+}

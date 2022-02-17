@@ -1,0 +1,89 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert 1 == 2\n  +1\n  -2",
+      "children" : [ {
+        "name" : "test_1",
+        "uid" : "c690fd47e6b4e7db",
+        "parentUid" : "10959c3b9d2f664cb99b9d2e2fac064d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1645068526857,
+          "stop" : 1645068526857,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 1,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "标题动态更新：失败时展示这里的内容",
+        "uid" : "c23069f5608c1509",
+        "parentUid" : "10959c3b9d2f664cb99b9d2e2fac064d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1645068527110,
+          "stop" : 1645068527110,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 1,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "10959c3b9d2f664cb99b9d2e2fac064d"
+    }, {
+      "name" : "AssertionError: assert 0",
+      "children" : [ {
+        "name" : "test_add_employee",
+        "uid" : "684990bf8fd6e3a0",
+        "parentUid" : "c9c77d7ae15b4ab6e63220cefc19b68f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1645068527174,
+          "stop" : 1645068527180,
+          "duration" : 6
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c9c77d7ae15b4ab6e63220cefc19b68f"
+    }, {
+      "name" : "AssertionError: assert 'hello' == 'helloo'\n  - helloo\n  ?      -\n  + hello",
+      "children" : [ {
+        "name" : "test_1",
+        "uid" : "448b77f8d48befcb",
+        "parentUid" : "5b6f6bc6a7dacb8d583591fcbb322bb0",
+        "status" : "failed",
+        "time" : {
+          "start" : 1645068527191,
+          "stop" : 1645068527193,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 1,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5b6f6bc6a7dacb8d583591fcbb322bb0"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

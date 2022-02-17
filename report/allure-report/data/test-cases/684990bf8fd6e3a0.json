@@ -1,0 +1,105 @@
+{
+  "uid" : "684990bf8fd6e3a0",
+  "name" : "test_add_employee",
+  "fullName" : "base.1.allure学习.test_allure_2（失败）.TestLogin#test_add_employee",
+  "historyId" : "531c1c1135c7a7a1d2806fa6004bf055",
+  "time" : {
+    "start" : 1645068527174,
+    "stop" : 1645068527180,
+    "duration" : 6
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 0",
+  "statusTrace" : "self = <test_allure_2（失败）.TestLogin object at 0x0000012867F7B130>\n\n    def test_add_employee(self):\n        data = {\"name\": \"wangwu\"}\n        route = \"/api/login\"\n    \n        # 使用 with 添加测试步骤\n        with allure.step(\"执行新增员工\"):\n            # 添加文本描述\n            allure.attach(str(url + route), name=\"请求URL\")\n            allure.attach(json.dumps(data), name=\"请求数据\")\n>       assert 0\nE       assert 0\n\nallure学习\\test_allure_2（失败）.py:44: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert 0",
+    "statusTrace" : "self = <test_allure_2（失败）.TestLogin object at 0x0000012867F7B130>\n\n    def test_add_employee(self):\n        data = {\"name\": \"wangwu\"}\n        route = \"/api/login\"\n    \n        # 使用 with 添加测试步骤\n        with allure.step(\"执行新增员工\"):\n            # 添加文本描述\n            allure.attach(str(url + route), name=\"请求URL\")\n            allure.attach(json.dumps(data), name=\"请求数据\")\n>       assert 0\nE       assert 0\n\nallure学习\\test_allure_2（失败）.py:44: AssertionError",
+    "steps" : [ {
+      "name" : "执行新增员工",
+      "time" : {
+        "start" : 1645068527174,
+        "stop" : 1645068527180,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "81c561f7baeda2a5",
+        "name" : "请求URL",
+        "source" : "81c561f7baeda2a5.attach",
+        "type" : "text/plain",
+        "size" : 26
+      }, {
+        "uid" : "f399fc6918530de3",
+        "name" : "请求数据",
+        "source" : "f399fc6918530de3.attach",
+        "type" : "text/plain",
+        "size" : 18
+      } ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 1,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "base.1.allure学习"
+  }, {
+    "name" : "suite",
+    "value" : "test_allure_2（失败）"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLogin"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "23944-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.1.allure学习.test_allure_2（失败）"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "684990bf8fd6e3a0.json",
+  "parameterValues" : [ ]
+}

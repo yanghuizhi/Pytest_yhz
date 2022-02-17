@@ -1,0 +1,115 @@
+{
+  "uid" : "f680246d9f3c3863",
+  "name" : "test_login_succ[zhangsan-123321]",
+  "fullName" : "base.1.allure学习.test_allure_2（失败）.TestLogin#test_login_succ",
+  "historyId" : "c77ae709b78f93679f5c5cca9ab67c52",
+  "time" : {
+    "start" : 1645068527126,
+    "stop" : 1645068527135,
+    "duration" : 9
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "执行登录成功",
+      "time" : {
+        "start" : 1645068527126,
+        "stop" : 1645068527135,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "921ebc426483e31f",
+        "name" : "请求URL",
+        "source" : "921ebc426483e31f.attach",
+        "type" : "text/plain",
+        "size" : 26
+      }, {
+        "uid" : "9c528e1ee109cfc3",
+        "name" : "请求数据",
+        "source" : "9c528e1ee109cfc3.txt",
+        "type" : "text/plain",
+        "size" : 46
+      }, {
+        "uid" : "1ed641792a6d4e34",
+        "name" : "图片",
+        "source" : "1ed641792a6d4e34.png",
+        "type" : "image/png",
+        "size" : 7
+      } ],
+      "parameters" : [ {
+        "name" : "username",
+        "value" : "'zhangsan'"
+      }, {
+        "name" : "pwd",
+        "value" : "'123321'"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 1,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "base.1.allure学习"
+  }, {
+    "name" : "suite",
+    "value" : "test_allure_2（失败）"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLogin"
+  }, {
+    "name" : "host",
+    "value" : "10-yanghuizhi-"
+  }, {
+    "name" : "thread",
+    "value" : "23944-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "base.1.allure学习.test_allure_2（失败）"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "pwd",
+    "value" : "'123321'"
+  }, {
+    "name" : "username",
+    "value" : "'zhangsan'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f680246d9f3c3863.json",
+  "parameterValues" : [ "'123321'", "'zhangsan'" ]
+}

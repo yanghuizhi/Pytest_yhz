@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <style>body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  /* do not increase min-width as some may use split screens */
+  min-width: 800px;
+  color: #999;
+}
+
+h1 {
+  font-size: 24px;
+  color: black;
+}
+
+h2 {
+  font-size: 16px;
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+a {
+  color: #999;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/******************************
+ * SUMMARY INFORMATION
+ ******************************/
+#environment td {
+  padding: 5px;
+  border: 1px solid #E6E6E6;
+}
+#environment tr:nth-child(odd) {
+  background-color: #f6f6f6;
+}
+
+/******************************
+ * TEST RESULT COLORS
+ ******************************/
+span.passed,
+.passed .col-result {
+  color: green;
+}
+
+span.skipped,
+span.xfailed,
+span.rerun,
+.skipped .col-result,
+.xfailed .col-result,
+.rerun .col-result {
+  color: orange;
+}
+
+span.error,
+span.failed,
+span.xpassed,
+.error .col-result,
+.failed .col-result,
+.xpassed .col-result {
+  color: red;
+}
+
+/******************************
+ * RESULTS TABLE
+ *
+ * 1. Table Layout
+ * 2. Extra
+ * 3. Sorting items
+ *
+ ******************************/
+/*------------------
+ * 1. Table Layout
+ *------------------*/
+#results-table {
+  border: 1px solid #e6e6e6;
+  color: #999;
+  font-size: 12px;
+  width: 100%;
+}
+#results-table th,
+#results-table td {
+  padding: 5px;
+  border: 1px solid #E6E6E6;
+  text-align: left;
+}
+#results-table th {
+  font-weight: bold;
+}
+
+/*------------------
+ * 2. Extra
+ *------------------*/
+.log {
+  background-color: #e6e6e6;
+  border: 1px solid #e6e6e6;
+  color: black;
+  display: block;
+  font-family: "Courier New", Courier, monospace;
+  height: 230px;
+  overflow-y: scroll;
+  padding: 5px;
+  white-space: pre-wrap;
+}
+.log:only-child {
+  height: inherit;
+}
+
+div.image {
+  border: 1px solid #e6e6e6;
+  float: right;
+  height: 240px;
+  margin-left: 5px;
+  overflow: hidden;
+  width: 320px;
+}
+div.image img {
+  width: 320px;
+}
+
+div.video {
+  border: 1px solid #e6e6e6;
+  float: right;
+  height: 240px;
+  margin-left: 5px;
+  overflow: hidden;
+  width: 320px;
+}
+div.video video {
+  overflow: hidden;
+  width: 320px;
+  height: 240px;
+}
+
+.collapsed {
+  display: none;
+}
+
+.expander::after {
+  content: " (show details)";
+  color: #BBB;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.collapser::after {
+  content: " (hide details)";
+  color: #BBB;
+  font-style: italic;
+  cursor: pointer;
+}
+
+/*------------------
+ * 3. Sorting items
+ *------------------*/
+.sortable {
+  cursor: pointer;
+}
+
+.sort-icon {
+  font-size: 0px;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  /*triangle*/
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+.inactive .sort-icon {
+  /*finish triangle*/
+  border-top: 8px solid #E6E6E6;
+}
+.asc.active .sort-icon {
+  /*finish triangle*/
+  border-bottom: 8px solid #999;
+}
+.desc.active .sort-icon {
+  /*finish triangle*/
+  border-top: 8px solid #999;
+}
+</style></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) { // eslint-disable-line no-redeclare
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function findAll(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sortColumn(elem) {
+    toggleSortStates(elem);
+    const colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    let key;
+    if (elem.classList.contains('result')) {
+        key = keyResult;
+    } else if (elem.classList.contains('links')) {
+        key = keyLink;
+    } else {
+        key = keyAlpha;
+    }
+    sortTable(elem, key(colIndex));
+}
+
+function showAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(showExtras);
+}
+
+function hideAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(hideExtras);
+}
+
+function showExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.remove('collapsed');
+    expandcollapse.classList.remove('expander');
+    expandcollapse.classList.add('collapser');
+}
+
+function hideExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.add('collapsed');
+    expandcollapse.classList.remove('collapser');
+    expandcollapse.classList.add('expander');
+}
+
+function showFilters() {
+    const filterItems = document.getElementsByClassName('filter');
+    for (let i = 0; i < filterItems.length; i++)
+        filterItems[i].hidden = false;
+}
+
+function addCollapse() {
+    // Add links for show/hide all
+    const resulttable = find('table#results-table');
+    const showhideall = document.createElement('p');
+    showhideall.innerHTML = '<a href="javascript:showAllExtras()">Show all details</a> / ' +
+                            '<a href="javascript:hideAllExtras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    findAll('.col-result').forEach(function(elem) {
+        const collapsed = getQueryParameter('collapsed') || 'Passed';
+        const extras = elem.parentNode.nextElementSibling;
+        const expandcollapse = document.createElement('span');
+        if (extras.classList.contains('collapsed')) {
+            expandcollapse.classList.add('expander');
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add('collapsed');
+            expandcollapse.classList.add('expander');
+        } else {
+            expandcollapse.classList.add('collapser');
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener('click', function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains('collapsed')) {
+                showExtras(event.currentTarget);
+            } else {
+                hideExtras(event.currentTarget);
+            }
+        });
+    });
+}
+
+function getQueryParameter(name) {
+    const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () { // eslint-disable-line no-unused-vars
+    resetSortHeaders();
+
+    addCollapse();
+
+    showFilters();
+
+    sortColumn(find('.initial-sort'));
+
+    findAll('.sortable').forEach(function(elem) {
+        elem.addEventListener('click',
+            function() {
+                sortColumn(elem);
+            }, false);
+    });
+}
+
+function sortTable(clicked, keyFunc) {
+    const rows = findAll('.results-table-row');
+    const reversed = !clicked.classList.contains('asc');
+    const sortedRows = sort(rows, keyFunc, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    const thead = document.getElementById('results-table-head');
+    document.getElementById('results-table').remove();
+    const parent = document.createElement('table');
+    parent.id = 'results-table';
+    parent.appendChild(thead);
+    sortedRows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName('BODY')[0].appendChild(parent);
+}
+
+function sort(items, keyFunc, reversed) {
+    const sortArray = items.map(function(item, i) {
+        return [keyFunc(item), i];
+    });
+
+    sortArray.sort(function(a, b) {
+        const keyA = a[0];
+        const keyB = b[0];
+
+        if (keyA == keyB) return 0;
+
+        if (reversed) {
+            return keyA < keyB ? 1 : -1;
+        } else {
+            return keyA > keyB ? 1 : -1;
+        }
+    });
+
+    return sortArray.map(function(item) {
+        const index = item[1];
+        return items[index];
+    });
+}
+
+function keyAlpha(colIndex) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[colIndex].firstChild.data.toLowerCase();
+    };
+}
+
+function keyLink(colIndex) {
+    return function(elem) {
+        const dataCell = elem.childNodes[1].childNodes[colIndex].firstChild;
+        return dataCell == null ? '' : dataCell.innerText.toLowerCase();
+    };
+}
+
+function keyResult(colIndex) {
+    return function(elem) {
+        const strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+            'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[colIndex].firstChild.data);
+    };
+}
+
+function resetSortHeaders() {
+    findAll('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    findAll('.sortable').forEach(function(elem) {
+        const icon = document.createElement('div');
+        icon.className = 'sort-icon';
+        icon.textContent = 'vvv';
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove('desc', 'active');
+        elem.classList.add('asc', 'inactive');
+    });
+}
+
+function toggleSortStates(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        resetSortHeaders();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function isAllRowsHidden(value) {
+    return value.hidden == false;
+}
+
+function filterTable(elem) { // eslint-disable-line no-unused-vars
+    const outcomeAtt = 'data-test-result';
+    const outcome = elem.getAttribute(outcomeAtt);
+    const classOutcome = outcome + ' results-table-row';
+    const outcomeRows = document.getElementsByClassName(classOutcome);
+
+    for(let i = 0; i < outcomeRows.length; i++){
+        outcomeRows[i].hidden = !elem.checked;
+    }
+
+    const rows = findAll('.results-table-row').filter(isAllRowsHidden);
+    const allRowsHidden = rows.length == 0 ? true : false;
+    const notFoundMessage = document.getElementById('not-found-message');
+    notFoundMessage.hidden = !allRowsHidden;
+}
+</script>
+    <h1>GeneralReport_2022.html</h1>
+    <p>Report generated on 17-Feb-2022 at 11:34:48 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>JAVA_HOME</td>
+        <td>C:\Program Files\Java\jdk-17.0.1</td></tr>
+      <tr>
+        <td>Packages</td>
+        <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "7.0.0"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.19041-SP0</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"allure-pytest": "2.9.45", "anyio": "3.5.0", "cov": "3.0.0", "html": "3.1.1", "metadata": "1.11.0"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.9.0</td></tr>
+      <tr>
+        <td>auther</td>
+        <td>huizhi.yang</td></tr></table>
+    <h2>Summary</h2>
+    <p>1 tests ran in 0.87 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable" col="duration">Duration</th>
+          <th class="sortable links" col="links">Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">base/Basics_B/test_2022-02-16.py::test_h</td>
+          <td class="col-duration">0.45</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">def test_h():<br/>        &#x27;&#x27;&#x27;<br/>        author: 上海-悠悠 QQ交流群：779429633<br/>        blog: https://www.cnblogs.com/yoyoketang<br/>        :return:<br/>        &#x27;&#x27;&#x27;<br/>        url = &quot;https://www.cnblogs.com/yoyoketang&quot;<br/>        s = requests.session()<br/>        print(s)<br/>        s.verify = False<br/>        r = s.get(url)<br/>&gt;       assert &quot;牛&quot; in r.text<br/><span class="error">E       assert &#x27;牛&#x27; in &#x27;&lt;!DOCTYPE html&gt;\n&lt;html lang=&quot;zh-cn&quot;&gt;\n&lt;head&gt;\n    &lt;meta charset=&quot;utf-8&quot; /&gt;\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;\n    &lt;meta name=&quot;referrer&quot; content=&quot;origin-when-crossorigin&quot; /&gt;\n    \n    \n    &lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-transform&quot; /&gt;\n    &lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-siteapp&quot; /&gt;\n    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;\n    &lt;title&gt;上海-悠悠 - 博客园&lt;/title&gt;\n    &lt;link id=&quot;favicon&quot; rel=&quot;shortcut icon&quot; href=&quot;//common.cnblogs.com/favicon.svg&quot; type=&quot;image/svg+xml&quot; /&gt;\n    \n    &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/blog-common.min.css?v=oyR94yG9E65eGarh4GfroLpfiKQIbUAj9f7aXieEDQQ&quot; /&gt;\n    &lt;link id=&quot;MainCss&quot; rel=&quot;stylesheet&quot; href=&quot;/skins/coffee/bundle-coffee.min.css?v=Y9jZElSXd1_SIyCam0BlUieX_j5gRAI1zEaKq7gMqLM&quot; /&gt;\n    \n    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;https://www.cnblogs.com/yoyoketang/custom.css?v=B8vJrai0ruXElw85p6qmB9v5GRw=&quot; /&gt;\n    &lt;link id=&quot;mobile-style&quot; media=&quot;only screen and (max-width: 767px)&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/skins/coffee/bundle-coffee-mobile.min.css?v=Wj0O8848On6RhITX7eiFElv1xhYbbtL3MIBgrzduAh4&quot; /&gt;\n    \n    &lt;link type=&quot;application/rss+xml&quot; rel=&quot;alt...iner&quot;&gt;\n\t\t\t\t&lt;div id=&quot;blog-sidecolumn&quot;&gt;&lt;/div&gt;\n                    &lt;script&gt;loadBlogSideColumn();&lt;/script&gt;\n\t\t\t&lt;/DIV&gt;\n\t\t\t\n\t\t&lt;/div&gt;&lt;!--end: sideBarMain --&gt;\n\t&lt;/div&gt;&lt;!--end: sideBar 侧边栏容器 --&gt;\n\t&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\n\t&lt;/div&gt;&lt;!--end: main --&gt;\n\t&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\n\t&lt;div id=&quot;footer&quot;&gt;\n\t\t&lt;!--done--&gt;\nCopyright &amp;copy; 2022 上海-悠悠\n&lt;br /&gt;&lt;span id=&quot;poweredby&quot;&gt;Powered by .NET 6 on Kubernetes&lt;/span&gt;\n\n\n\n\t&lt;/div&gt;&lt;!--end: footer --&gt;\n&lt;/div&gt;&lt;!--end: home 自定义的最大容器 --&gt;\n\n\n    \n\n    &lt;input type=&quot;hidden&quot; id=&quot;antiforgery_token&quot; value=&quot;CfDJ8GsLOKiGtk1Au0UP1SouGdWPyJS1_QM-31dMRj7uxUGwmOxuUOjB3VKMRprBDvZYtgHySFPcu6sUtf22nF0WxHUhbYtUoh7WLhneCz9TlZvcvkBDbhMVmL_MnXZEOYM5SxMG5P3ARkM47V-sbPBdBmI&quot; /&gt;\n    &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=UA-476124-1&quot;&gt;&lt;/script&gt;\n    &lt;script&gt;\n    window.dataLayer = window.dataLayer || [];\n    function gtag(){dataLayer.push(arguments);}\n    gtag(\&#x27;js\&#x27;, new Date());\n    var kv = getGACustom();\n    if (kv) {\n        gtag(\&#x27;set\&#x27;, kv);\n    }\n    gtag(\&#x27;config\&#x27;, \&#x27;UA-476124-1\&#x27;);\n    &lt;/script&gt;\n    &lt;script defer src=&quot;https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295&quot;&gt;&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;&#x27;</span><br/><span class="error">E        +  where &#x27;&lt;!DOCTYPE html&gt;\n&lt;html lang=&quot;zh-cn&quot;&gt;\n&lt;head&gt;\n    &lt;meta charset=&quot;utf-8&quot; /&gt;\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;\n    &lt;meta name=&quot;referrer&quot; content=&quot;origin-when-crossorigin&quot; /&gt;\n    \n    \n    &lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-transform&quot; /&gt;\n    &lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-siteapp&quot; /&gt;\n    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;\n    &lt;title&gt;上海-悠悠 - 博客园&lt;/title&gt;\n    &lt;link id=&quot;favicon&quot; rel=&quot;shortcut icon&quot; href=&quot;//common.cnblogs.com/favicon.svg&quot; type=&quot;image/svg+xml&quot; /&gt;\n    \n    &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/blog-common.min.css?v=oyR94yG9E65eGarh4GfroLpfiKQIbUAj9f7aXieEDQQ&quot; /&gt;\n    &lt;link id=&quot;MainCss&quot; rel=&quot;stylesheet&quot; href=&quot;/skins/coffee/bundle-coffee.min.css?v=Y9jZElSXd1_SIyCam0BlUieX_j5gRAI1zEaKq7gMqLM&quot; /&gt;\n    \n    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;https://www.cnblogs.com/yoyoketang/custom.css?v=B8vJrai0ruXElw85p6qmB9v5GRw=&quot; /&gt;\n    &lt;link id=&quot;mobile-style&quot; media=&quot;only screen and (max-width: 767px)&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/skins/coffee/bundle-coffee-mobile.min.css?v=Wj0O8848On6RhITX7eiFElv1xhYbbtL3MIBgrzduAh4&quot; /&gt;\n    \n    &lt;link type=&quot;application/rss+xml&quot; rel=&quot;alt...iner&quot;&gt;\n\t\t\t\t&lt;div id=&quot;blog-sidecolumn&quot;&gt;&lt;/div&gt;\n                    &lt;script&gt;loadBlogSideColumn();&lt;/script&gt;\n\t\t\t&lt;/DIV&gt;\n\t\t\t\n\t\t&lt;/div&gt;&lt;!--end: sideBarMain --&gt;\n\t&lt;/div&gt;&lt;!--end: sideBar 侧边栏容器 --&gt;\n\t&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\n\t&lt;/div&gt;&lt;!--end: main --&gt;\n\t&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;\n\t&lt;div id=&quot;footer&quot;&gt;\n\t\t&lt;!--done--&gt;\nCopyright &amp;copy; 2022 上海-悠悠\n&lt;br /&gt;&lt;span id=&quot;poweredby&quot;&gt;Powered by .NET 6 on Kubernetes&lt;/span&gt;\n\n\n\n\t&lt;/div&gt;&lt;!--end: footer --&gt;\n&lt;/div&gt;&lt;!--end: home 自定义的最大容器 --&gt;\n\n\n    \n\n    &lt;input type=&quot;hidden&quot; id=&quot;antiforgery_token&quot; value=&quot;CfDJ8GsLOKiGtk1Au0UP1SouGdWPyJS1_QM-31dMRj7uxUGwmOxuUOjB3VKMRprBDvZYtgHySFPcu6sUtf22nF0WxHUhbYtUoh7WLhneCz9TlZvcvkBDbhMVmL_MnXZEOYM5SxMG5P3ARkM47V-sbPBdBmI&quot; /&gt;\n    &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=UA-476124-1&quot;&gt;&lt;/script&gt;\n    &lt;script&gt;\n    window.dataLayer = window.dataLayer || [];\n    function gtag(){dataLayer.push(arguments);}\n    gtag(\&#x27;js\&#x27;, new Date());\n    var kv = getGACustom();\n    if (kv) {\n        gtag(\&#x27;set\&#x27;, kv);\n    }\n    gtag(\&#x27;config\&#x27;, \&#x27;UA-476124-1\&#x27;);\n    &lt;/script&gt;\n    &lt;script defer src=&quot;https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295&quot;&gt;&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;&#x27; = &lt;Response [200]&gt;.text</span><br/><br/>base\Basics_B\test_2022-02-16.py:22: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>&lt;requests.sessions.Session object at 0x00000296D4098910&gt;
+<br/></div></td></tr></tbody></table></body></html>
